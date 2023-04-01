@@ -23,8 +23,17 @@ struct ContentView: View {
 	var body: some View {
         VStack {
             ForEach(employeeVM.employees, id: \.self) { employee in
-                Text("Employee: \(employee.name)")
-                    .foregroundColor(.black)
+                HStack {
+                    Image("profile_photo", bundle: .core)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 64)
+                        .cornerRadius(32)
+                    Text("Employee: \(employee.name)")
+                        .foregroundColor(
+                            Color("AccentColor", bundle: .core)
+                        )
+                }
             }
         }
         .task {
