@@ -77,6 +77,8 @@ targets:
     sources:
       - path: core/sources
         group: core
+      - path: core/resources
+        group: core
         
     # Set our dependencies from external libraries
     dependencies:
